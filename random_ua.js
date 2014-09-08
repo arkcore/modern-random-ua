@@ -159,6 +159,3 @@ exports.generate = function generate() {
     var random = randomBrowserAndOS();
     return browser[random[0]](random[1]);
 };
-
-var random = randomBrowserAndOS();
-console.log(browser[random[0]](random[1]));
