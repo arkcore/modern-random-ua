@@ -53,15 +53,13 @@ function randomLang() {
 function randomBrowserAndOS() {
     var browser = rnd({
         chrome:    .45132810566,
-        iexplorer: .27477061836,
-        firefox:   .19384170608,
+        firefox:   .27477061836,
+        iexplorer: .19384170608,
         safari:    .06186781118,
-        opera:     .01574236955
     }),
     os = {
         chrome:  {win: .89,  mac: .09 , lin: .02},
         firefox: {win: .83,  mac: .16,  lin: .01},
-        opera:   {win: .91,  mac: .03 , lin: .06},
         safari:  {win: .04 , mac: .96  },
         iexplorer: ['win']
     };
@@ -96,7 +94,7 @@ var version_string = {
         return rnd(5, 6) + '.' + rnd(0, 3);
     },
     ie: function () {
-        return rnd(7, 11);
+        return rnd(9, 11);
     },
     trident: function () {
         return rnd(3, 7) + '.' + rnd(0, 1);
@@ -105,13 +103,7 @@ var version_string = {
         return [10, rnd(5, 10), rnd(0, 9)].join(delim || '.');
     },
     chrome: function () {
-        return [rnd(13, 39), 0, rnd(800, 899), 0].join('.');
-    },
-    presto: function () {
-        return '2.9.' + rnd(160, 190);
-    },
-    presto2: function () {
-        return rnd(10, 12) + '.00';
+        return [rnd(35, 39), 0, rnd(800, 899), 0].join('.');
     },
     safari: function () {
         return rnd(531, 538) + '.' + rnd(0, 2) + '.' + rnd(0,2);
@@ -121,7 +113,7 @@ var version_string = {
 var browser = {
     firefox: function firefox(arch) {
         //https://developer.mozilla.org/en-US/docs/Gecko_user_agent_string_reference
-        var firefox_ver = rnd(5, 15) + randomRevision(2),
+        var firefox_ver = rnd(26, 32) + randomRevision(2),
             gecko_ver = 'Gecko/20100101 Firefox/' + firefox_ver,
             proc = randomProc(arch),
             os_ver = (arch === 'win') ? '(Windows NT ' + version_string.nt() + ((proc) ? '; ' + proc : '')
@@ -144,21 +136,10 @@ var browser = {
             version_string.trident() + ((rnd(0, 1) === 1) ? '; .NET CLR ' + version_string.net() : '') + ')';
     },
 
-    opera: function opera(arch) {
-        //http://www.opera.com/docs/history/
-        var presto_ver = ' Presto/' + version_string.presto() + ' Version/' + version_string.presto2() + ')',
-            os_ver = (arch === 'win') ? '(Windows NT ' + version_string.nt() + '; U; ' + randomLang() + presto_ver
-            : (arch === 'lin') ? '(X11; Linux ' + randomProc(arch) + '; U; ' + randomLang() + presto_ver
-            : '(Macintosh; Intel Mac OS X ' + version_string.osx() + ' U; ' + randomLang() + ' Presto/' +
-            version_string.presto() + ' Version/' + version_string.presto2() + ')';
-
-        return 'Opera/' + rnd(9, 14) + '.' + rnd(0, 99) + ' ' + os_ver;
-    },
-
     safari: function safari(arch) {
         var safari = version_string.safari(),
-            ver = rnd(4, 7) + '.' + rnd(0,1) + '.' + rnd(0,10),
-            os_ver = (arch === 'mac') ? '(Macintosh; ' + randomProc('mac') + ' Mac OS X '+ version_string.osx('_') + ' rv:' + rnd(2, 6) + '.0; '+ randomLang() + ') '
+            ver = rnd(7, 8) + '.' + rnd(0,1) + '.' + rnd(0,10),
+            os_ver = (arch === 'mac') ? '(Macintosh; ' + randomProc('mac') + ' Mac OS X '+ version_string.osx('_') + ' rv:' + rnd(7, 8) + '.0; '+ randomLang() + ') '
             : '(Windows; U; Windows NT ' + version_string.nt() + ')';
 
         return 'Mozilla/5.0 ' + os_ver + 'AppleWebKit/' + safari + ' (KHTML, like Gecko) Version/' + ver + ' Safari/' + safari;
@@ -178,3 +159,6 @@ exports.generate = function generate() {
     var random = randomBrowserAndOS();
     return browser[random[0]](random[1]);
 };
+
+var random = randomBrowserAndOS();
+console.log(browser[random[0]](random[1]));
