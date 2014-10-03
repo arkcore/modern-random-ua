@@ -2,6 +2,8 @@ random-ua.js - A random User-Agent Generator
 ============================================
 Randomly generates User-Agent strings based on actual browser market share and usage statistics.
 
+**Old browser versions removed from this fork**
+
 Caveats
 -------
 The version numbers generated are sane, however, revisions are totally random and unlikely to exist in the wild.
