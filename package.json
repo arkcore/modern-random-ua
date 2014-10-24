@@ -1,6 +1,6 @@
 {
     "name": "modern-random-ua",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "./random_ua.js",
     "description": "Randomly generates User-Agent strings based on actual usage statistics from Wikimedia.",
     "keywords": [
