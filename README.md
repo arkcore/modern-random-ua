@@ -14,7 +14,7 @@ I decided not to include language selection found in the PHP version and instead
 Usage
 -----
 ```js
-var random_ua = require('random-ua');
+var random_ua = require('modern-random-ua');
 
 console.log(random_ua.generate());
 //Easy like Sunday morning
