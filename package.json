@@ -1,39 +1,39 @@
 {
-    "name": "modern-random-ua",
-    "version": "1.0.1",
-    "main": "./random_ua.js",
-    "description": "Randomly generates User-Agent strings based on actual usage statistics from Wikimedia.",
-    "keywords": [
-        "user",
-        "agent",
-        "browser",
-        "user-agent",
-        "http",
-        "random"
-    ],
-    "author": {
-        "name": "Jeffrey Mealo",
-        "email": "jeffreymealo@gmail.com",
-        "web": "http://www.jeffreymealo.com"
-    },
-    "license": {
-        "type": "MIT"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/arkcore/modern-random-ua.git"
-    },
-    "directories": {
-        "test": "test"
-    },
-    "engines": {
-        "node": "*"
-    },
-    "scripts": {
-        "test": "multi='list=- xunit=test-report.xml' ./node_modules/.bin/mocha -R mocha-multi"
-    },
-    "devDependencies": {
-        "mocha": "^1.21.4",
-        "mocha-multi": "^0.4.1"
-    }
+  "name": "modern-random-ua",
+  "version": "1.0.2",
+  "main": "./random_ua.js",
+  "description": "Randomly generates User-Agent strings based on actual usage statistics from Wikimedia.",
+  "keywords": [
+    "user",
+    "agent",
+    "browser",
+    "user-agent",
+    "http",
+    "random"
+  ],
+  "author": {
+    "name": "Jeffrey Mealo",
+    "email": "jeffreymealo@gmail.com",
+    "web": "http://www.jeffreymealo.com"
+  },
+  "license": {
+    "type": "MIT"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arkcore/modern-random-ua.git"
+  },
+  "directories": {
+    "test": "test"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "scripts": {
+    "test": "multi='list=- xunit=test-report.xml' ./node_modules/.bin/mocha -R mocha-multi"
+  },
+  "devDependencies": {
+    "mocha": "^2.0.1",
+    "mocha-multi": "^0.5.0"
+  }
 }
